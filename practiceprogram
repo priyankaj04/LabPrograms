@@ -1,0 +1,40 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+    public static void main(String args[])
+    {
+        int[]arr=new int[10];
+        int fact;
+        if(args.length==0)
+        {
+            System.out.println("no commmand line argument");
+            return;
+            
+        }
+        for(int i=0;i<args.length;i++)
+        {
+            arr[i]=Integer.parseInt(args[i]);
+        }
+        for(int i=0;i<args.length;i++)
+        {
+            fact=1;
+            while(arr[i]>0)
+            {
+                fact=fact*arr[i];
+                arr[i]--;
+            }
+            System.out.println("factorial of "+args[i]+"is:"+fact);
+        }
+    }
+}
+
+            
+    
+        
