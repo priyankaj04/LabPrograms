@@ -4,30 +4,30 @@
 
 void mergesort(unsigned long int[],int,int);
 void merge(unsigned long int[],int,int,int);
-//void fill_random(unsigned long int [],int,int);
-int delay(int delay)
-{
-	int now=time(NULL);
-	int later=now+delay;
-	while(now<=later)
-	now=time(NULL);
-}
+void fill_random(unsigned long int [],int,int);
+//int delay(int delay)
+//{
+//	int now=time(NULL);
+//	int later=now+delay;
+//	while(now<=later)
+//	now=time(NULL);
+//}
 
 void main()
 {
-	unsigned long int n,a[1000],i,l,u;
+	unsigned long int a[1000],i,l,u;
+	int n;
 	clock_t start,end;
 	double t;
 	printf("\n enter the number of elements(length):");
 	scanf("%d",&n);
 	printf("\nEnter the array elements : ");
+//	for(i=0;i<n;i++)
+//	scanf("%d",&a[i]);
+	fill_random(a,n,500);
+	printf("\nThe array elements are:\t");
 	for(i=0;i<n;i++)
-	scanf("%d",&a[i]);
-	//fill_random(a,n,500);
-	//printf("\nThe array elements are:\t");
-	//for(i=0;i<n;i++)
-	//printf("a[%d]=%d\t",i,a[i]);
-	//scanf("%d",&a[i]);
+	printf("a[%d]=%d\t",i,a[i]);
 	start=clock();
 	mergesort(a,0,n-1);
 	end=clock();
@@ -42,7 +42,7 @@ void mergesort(unsigned long int a[100],int low,int high)
 	int mid;
 	if(low<high)
 	{
-		delay(5);
+		//delay(5);
 		mid=(low+high)/2;
 		mergesort(a,low,mid);
 		mergesort(a,mid+1,high);
@@ -84,9 +84,9 @@ for(i=low;i<=k-1;i++)
 a[i]=c[i];
 }
 
-//void fill_random(unsigned long int array[1000],int length,int max)
-//{
-//	int i;
-//	for(i=0;i<length;i++)
-//		array[i]=(rand()%max)+1;
-//}
+void fill_random(unsigned long int array[1000],unsigned long int length,int max)
+{
+	int i;
+	for(i=0;i<length;i++)
+		array[i]=(rand()%max)+1;
+}
